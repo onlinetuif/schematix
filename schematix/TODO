@@ -1,0 +1,31 @@
+Given an HTML file, source:
+- Call import_html(source)
+  - Locate all tables
+  - Remove outer nested tables (only use single level tables)
+  - Create Table object for each
+    - Populate cell values
+    - Attempt to find color, font, data type, format string, 
+      alignment, cell type (td/th)
+  - based on above attributes, compute header/data/metadata similarity scores
+  - 
+
+
+core # main Extractor classes (SchemaExtractor, SpreadsheetExtractor, HTMLTableExtractor), Table class
+base_util
+html_util
+xls_util
+
+
+__init__.py      # SpreadsheetExtractor, HtmlTableExtractor, 
+                 # import_spreadsheet, import_html
+core.py          # 
+parse_util.py
+classify_util.py
+spreadsheet
+  __init__.py    # SpreadsheetExtractor
+  parse.py
+  classify.py
+html
+  __init__.py    # HtmlTableExtractor
+  parse.py
+  classify.py

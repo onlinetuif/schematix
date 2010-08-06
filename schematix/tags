@@ -1,0 +1,51 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.6	//
+CellBlock	xlrd_util.py	/^class CellBlock(object):$/;"	c
+Spreadsheet	core.py	/^class Spreadsheet(object):$/;"	c
+__init__	core.py	/^    def __init__(self, source):$/;"	m	class:Spreadsheet
+__init__	xlrd_util.py	/^    def __init__(self, workbook, sheet_id):$/;"	m	class:CellBlock
+_parse_sheet	core.py	/^    def _parse_sheet(self, sheet_id):$/;"	m	class:Spreadsheet
+add_row_to_block	score_util.py	/^    def add_row_to_block(row, block):$/;"	f
+all_sheet_blocks	core.py	/^    def all_sheet_blocks(self):$/;"	m	class:Spreadsheet
+calc_header_score	score_util.py	/^def calc_header_score(cellblock, row, next_row):$/;"	f
+calc_metadata_score	score_util.py	/^def calc_metadata_score(cellblock, row):$/;"	f
+calc_sim_score	score_util.py	/^def calc_sim_score(cellblock, row, next_row):$/;"	f
+calculate_schema_score	score_util.py	/^    def calculate_schema_score(row_cells, block):$/;"	f
+calculate_sequence_score	score_util.py	/^def calculate_sequence_score(cells, row, col):$/;"	f
+check_for_empty_cell	xlrd_util.py	/^def check_for_empty_cell(c):$/;"	f
+check_for_empty_row	xlrd_util.py	/^def check_for_empty_row(cellblock, row_index):$/;"	f
+check_for_empty_rows	xlrd_util.py	/^def check_for_empty_rows(cells, row_list, col_list):$/;"	f
+check_for_numeric_cell	xlrd_util.py	/^def check_for_numeric_cell(c):$/;"	f
+compare_schemas	score_util.py	/^    def compare_schemas(block1, block2):$/;"	f
+compute_row_scores	score_util.py	/^def compute_row_scores(sheetinfo):$/;"	f
+dumb_classify	score_util.py	/^def dumb_classify(sheetinfo):$/;"	f
+extract_schemas	core.py	/^    def extract_schemas(self, sheet_id=None):$/;"	m	class:Spreadsheet
+format_number	show_schema.py	/^def format_number(cell_val, format_str):$/;"	f
+get_block_gen	core.py	/^    def get_block_gen(self, sheet_id=None):$/;"	m	class:Spreadsheet
+get_block_info	core.py	/^    def get_block_info(self, sheet_id=None):$/;"	m	class:Spreadsheet
+get_block_info	score_util.py	/^def get_block_info(sheetinfo):$/;"	f
+get_block_list	score_util.py	/^def get_block_list(sheetinfo):$/;"	f
+get_blocks	core.py	/^    def get_blocks(self, sheet_id=None):$/;"	m	class:Spreadsheet
+get_cell	core.py	/^    def get_cell(self, sheet_id, row, col):$/;"	m	class:Spreadsheet
+get_cell_attributes	xlrd_util.py	/^    def get_cell_attributes(self, workbook, sheet):$/;"	m	class:CellBlock
+get_effective_alignment	show_schema.py	/^def get_effective_alignment(cell):$/;"	f
+get_formatted_value	show_schema.py	/^def get_formatted_value(cell):$/;"	f
+get_row_info	core.py	/^    def get_row_info(self, sheet_id, row_id):$/;"	m	class:Spreadsheet
+get_row_info	score_util.py	/^def get_row_info(sheetinfo, row_id):$/;"	f
+import_spreadsheet	__init__.py	/^def import_spreadsheet(source):$/;"	f
+is_relational	core.py	/^    def is_relational(self, sheet_id):$/;"	m	class:Spreadsheet
+load_spreadsheet	xlrd_util.py	/^def load_spreadsheet(source):$/;"	f
+mark_merged_cells	xlrd_util.py	/^    def mark_merged_cells(self, merged_cells):$/;"	m	class:CellBlock
+output	core.py	/^    def output(self, sheet_id, fmt='html', max_rows=None, debug=False):$/;"	m	class:Spreadsheet
+output_html	show_schema.py	/^def output_html(sheetinfo, max_rows=None, debug=False):$/;"	f
+output_row_html	show_schema.py	/^def output_row_html(sheetinfo, row_id):$/;"	f
+output_text	show_schema.py	/^def output_text(sheetinfo, max_rows=None):$/;"	f
+print_html	show_schema.py	/^def print_html(cells, schema_blocks):$/;"	f
+print_rows	core.py	/^    def print_rows(self, sheet_id, annotated_labels, outfile):$/;"	m	class:Spreadsheet
+smart_classify	score_util.py	/^def smart_classify(sheetinfo):$/;"	f
+update_cell_lists	xlrd_util.py	/^    def update_cell_lists(self):$/;"	m	class:CellBlock
+validate	core.py	/^    def validate(self, sheet_id, annotated_labels):$/;"	m	class:Spreadsheet

@@ -1,0 +1,36 @@
+define import(source, type='AUTO')
+    assert(type in ['AUTO','SPREADSHEET','XLS','CSV','TXT','HTML_TABLE','PDF']
+define spreadsheet_import(source)
+    # source should be anything readable by xlrd, including a filename,
+    # mmap object, or file object
+    #
+    # result is a Schema object with pointers to the rows and cols defining 
+    # each data block, along with all column headers and types, 
+    # and metadata rows
+define output(source, schema_obj, format='HTML', db_conn=None)
+    # Renders HTML version of data from source, following schema defined in
+    # schema_obj.  Alternatively, other formats (DB or HADOOP) are available.
+    # DB connects to the database connection db_conn and inserts the metadata
+    # following a simple tiered data model (TODO: define this somewhere).
+    # HADOOP outputs the data one column per row, with an identifying 
+    # STRIP_ID followed by the column header and list of data values
+    assert(format in ['HTML','DB','HADOOP'])
+
+class Schema:
+    source_type = None 	     # XLS,CSV,TXT,HTML_TABLE, or PDF
+    blocks = None            # list of SchemaBlock objects
+
+class SchemaBlock:
+    start = None             # (row,col) for spreadsheets, csv, 
+    end = None
+    columns = None           # list of SchemaColumn objects
+    header_rows = None
+    data_rows = None
+    empty_rows = None
+    subheader_rows = None
+    metadata_rows = None
+    nonrelational_rows = None
+
+class SchemaColumn:
+    header_location = None
+    header_text = None
