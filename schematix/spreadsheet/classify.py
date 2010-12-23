@@ -8,7 +8,6 @@ from schematix.classify_util import BaseClassifier, HEADER_DICT
 def classify_tables(tables):
     classifier = XLSClassifier()
     result = [classifier.classify(t) for t in tables]
-    print result
     if result:
         return zip(*result)
     else:

@@ -76,26 +76,35 @@ class Table(object):
         for row in self.values:
             print ','.join((unicode[v] for v in row))
 
-    def show_html(self):
-        import cgi
-        print '<table>'
-        print '<thead><tr><th>'
-        h_list = '</th><th>'.join((cgi.escape[v]
+    def get_html(self):
+        from cgi import escape
+        html = []
+        html.append('<table>')
+        html.append('<thead><tr><th>')
+        h_list = '</th><th>'.join((escape(v)
                                    for v in self.headers))
-        print h_list.encode("ascii", "xmlcharrefreplace")
-        print '</th></tr></thead><tbody>'
+        html.append(h_list.encode("ascii", "xmlcharrefreplace"))
+        html.append('</th></tr></thead><tbody>')
         for row, row_vals in zip(self.display_values, self.values):
-            print '<tr>'
+            html.append('<tr>')
             for cell, val in zip(row, row_vals):
                 if (isinstance(val, int) or
                     isinstance(val, float)):
-                    print '<td align="right">'
+                    html.append('<td align="right">')
                 else:
-                    print '<td>'
-                print cgi.escape(cell).encode("ascii", "xmlcharrefreplace") 
-                print '</td>'
-            print '</tr>'
-        print '</tbody></table>'
+                    html.append('<td>')
+                html.append(escape(cell).encode("ascii",
+                                                "xmlcharrefreplace")) 
+                html.append('</td>')
+            html.append('</tr>')
+        html.append('</tbody></table>')
+        return ''.join(html)
+
+    def show_html(self):
+        print self.get_html()
+
+    def __html__(self):
+        return self.get_html()
 
     def clean(self):
         self.remove_empty_columns()

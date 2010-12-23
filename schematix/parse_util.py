@@ -16,20 +16,15 @@ def check_for_empty_row(row):
 class BaseTable(object):
     def clean(self):
         """Remove empty columns and rows"""
-        print 'cleaning'
-        print len(self.cells)
-        print len(self.cells[0])
         self.remove_empty_cols()
-        print len(self.cells)
-        print len(self.cells[0])
         self.remove_empty_rows()
-        print len(self.cells)
-        print len(self.cells[0])
 
     def remove_empty_cols(self):
         """Locate empty columns (where all cells are blank or empty), and 
         remove them"""
         cols_to_remove = []
+        if len(self.cells) == 0:
+            return
         for col_num in range(len(self.cells[0])):
             if all([row[col_num].is_empty() for row in self.cells]):
                 cols_to_remove.append(col_num)
@@ -90,9 +85,9 @@ class BaseCell(object):
         else:
             numeric_format = False
 
-        print 'self.txt: %s, self.fmt: %s' % (self.text, self.fmt)
-        print 'looks_like_year: %r, looks_numeric: %r, numeric_format: %r' % (
-            looks_like_year, looks_numeric, numeric_format)
+        #print 'self.txt: %s, self.fmt: %s' % (self.text, self.fmt)
+        #print 'looks_like_year: %r, looks_numeric: %r, numeric_format: %r' % (
+        #    looks_like_year, looks_numeric, numeric_format)
 
         if looks_like_year:
             return 0.5

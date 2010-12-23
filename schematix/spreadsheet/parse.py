@@ -112,7 +112,6 @@ class XLSTable(BaseTable):
             cells[rlo][clo].merge_range = (rhi-rlo, chi-clo)
 
 def get_display_text(value, data_type, fmt):
-    print 'value: %r, fmt: %r' % (value, fmt)
     if isinstance(value, basestring):
         try:
             value = float(value)

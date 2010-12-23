@@ -1,4 +1,4 @@
-import schematix
+from schematix import import_spreadsheet, SpreadsheetExtractor
 
 TEST_DIR = "/".join(__file__.split("/")[:-1]) + "/"
 FILENAME = 'test1.xls'
@@ -6,17 +6,17 @@ FILENAME = 'test1.xls'
 FILENAME = TEST_DIR + FILENAME
 
 f = open(FILENAME)
-s = schematix.SpreadsheetExtractor(f)
+s = SpreadsheetExtractor(f)
 s.extract_schemas()
 tables = list(s.get_tables())
 
 from pprint import pprint
 
 def test_filename_import():
-    tables_from_filename = schematix.import_spreadsheet(FILENAME)
+    tables_from_filename = import_spreadsheet(FILENAME)
 
 def test_metadata():
-    assert len(tables) == 3
+    assert len(tables) == 4
     print tables[0].dim
 
 def test_sheet1_parsing():
@@ -64,7 +64,7 @@ def test_data_parsing():
 def test_bad_file():
     bad_file = TEST_DIR + 'test1.html'
     g = open(bad_file)
-    bad_tables = schematix.import_spreadsheet(g)
+    bad_tables = import_spreadsheet(g)
     assert len(list(bad_tables)) == 0
 
 if __name__ == '__main__':
