@@ -1,0 +1,6 @@
+SchematiX is a python library for processing tabular data.
+
+SchematiX currently accepts XLS and HTML files that contain data tables.
+Simple examples can be found in the tests directory.  After parsing the
+source files, SchematiX returns the column headers and data values for each
+table found.
