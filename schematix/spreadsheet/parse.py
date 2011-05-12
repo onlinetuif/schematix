@@ -159,7 +159,7 @@ locale.setlocale(locale.LC_ALL, 'en_US.UTF-8')
 # - ImpGetNumberOutput, ImpGetDateOutput, ImpGetTimeOutput, etc
 # - Fractional formatting (lines 2196-2459)
 def format_number(value, fmt):
-    print 'value: %r, fmt: %r' % (value, fmt)
+    # print 'value: %r, fmt: %r' % (value, fmt)
     try:
         if value == '':
             return ''
